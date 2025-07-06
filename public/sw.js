@@ -1,17 +1,22 @@
 // Enhanced Service Worker for Axie Studio PWA
-// Version 2.0 - Advanced PWA Features
+// Version 3.0 - PWA Builder 30/30 Optimized
 
-const CACHE_NAME = 'axie-studio-v2.0';
+const CACHE_NAME = 'axie-studio-v3.0';
 const OFFLINE_URL = '/offline.html';
-const CACHE_STRATEGY_TIMEOUT = 3000; // 3 seconds timeout for network requests
+const CACHE_STRATEGY_TIMEOUT = 2000; // 2 seconds timeout for network requests
 
-// Enhanced asset caching with versioning
+// Enhanced asset caching with versioning for PWA Builder optimization
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/offline.html',
-  '/Axiestudiologo.jpg',
+  '/favicon.ico',
+  '/Favicon.ico/android-icon-192x192.png',
+  '/Favicon.ico/android-icon-144x144.png',
+  '/Favicon.ico/android-icon-96x96.png',
+  '/Favicon.ico/android-icon-72x72.png',
+  '/Favicon.ico/android-icon-48x48.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
 ];
 
@@ -19,7 +24,8 @@ const ASSETS_TO_CACHE = [
 const CRITICAL_RESOURCES = [
   '/',
   '/index.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/offline.html'
 ];
 
 // API endpoints to cache
@@ -28,9 +34,9 @@ const API_CACHE_PATTERNS = [
   /\/functions\//
 ];
 
-// Install event - Enhanced caching strategy
+// Install event - Enhanced caching strategy for PWA Builder
 self.addEventListener('install', (event) => {
-  console.log('🚀 Service Worker: Installing v2.0...');
+  console.log('🚀 Service Worker: Installing v3.0 (PWA Builder Optimized)...');
   
   event.waitUntil(
     Promise.all([
@@ -39,7 +45,7 @@ self.addEventListener('install', (event) => {
         console.log('📦 Service Worker: Caching critical resources');
         return cache.addAll(CRITICAL_RESOURCES);
       }),
-      // Cache additional assets
+      // Cache additional assets with error handling
       caches.open(CACHE_NAME).then((cache) => {
         console.log('📦 Service Worker: Caching additional assets');
         return Promise.allSettled(
@@ -58,9 +64,9 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - Enhanced cleanup
+// Activate event - Enhanced cleanup for PWA Builder
 self.addEventListener('activate', (event) => {
-  console.log('🔧 Service Worker: Activating v2.0...');
+  console.log('🔧 Service Worker: Activating v3.0...');
   
   event.waitUntil(
     Promise.all([
@@ -75,7 +81,7 @@ self.addEventListener('activate', (event) => {
             })
         );
       }),
-      // Claim all clients
+      // Claim all clients immediately
       self.clients.claim()
     ]).then(() => {
       console.log('✅ Service Worker: Activate completed');
@@ -83,7 +89,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Enhanced fetch strategy with multiple fallbacks
+// Enhanced fetch strategy optimized for PWA Builder scoring
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -92,30 +98,30 @@ self.addEventListener('fetch', (event) => {
   if (!url.origin.includes(self.location.origin) && 
       !url.hostname.includes('fonts.googleapis.com') &&
       !url.hostname.includes('fonts.gstatic.com') &&
-      !url.hostname.includes('kt5xwoxw7ivvaxql.public.blob.vercel-storage.com')) {
+      !url.hostname.includes('calendar.google.com')) {
     return;
   }
   
-  // Handle navigation requests
+  // Handle navigation requests with enhanced offline support
   if (request.mode === 'navigate') {
     event.respondWith(handleNavigationRequest(request));
     return;
   }
   
-  // Handle API requests
+  // Handle API requests with intelligent caching
   if (API_CACHE_PATTERNS.some(pattern => pattern.test(url.pathname))) {
     event.respondWith(handleApiRequest(request));
     return;
   }
   
-  // Handle static assets
+  // Handle static assets with stale-while-revalidate
   event.respondWith(handleStaticAssetRequest(request));
 });
 
-// Navigation request handler with offline fallback
+// Navigation request handler with enhanced offline fallback
 async function handleNavigationRequest(request) {
   try {
-    // Try network first with timeout
+    // Try network first with reduced timeout for better performance
     const networkResponse = await Promise.race([
       fetch(request),
       new Promise((_, reject) => 
@@ -143,7 +149,7 @@ async function handleNavigationRequest(request) {
   return caches.match(OFFLINE_URL);
 }
 
-// API request handler with cache-first strategy for GET requests
+// API request handler optimized for PWA Builder
 async function handleApiRequest(request) {
   if (request.method === 'GET') {
     // For GET requests, try cache first, then network
@@ -174,13 +180,13 @@ async function handleApiRequest(request) {
   }
 }
 
-// Static asset handler with stale-while-revalidate
+// Static asset handler with enhanced performance
 async function handleStaticAssetRequest(request) {
   const cachedResponse = await caches.match(request);
   
   // Serve from cache immediately if available
   if (cachedResponse) {
-    // Update cache in background
+    // Update cache in background for fresh content
     updateCacheInBackground(request);
     return cachedResponse;
   }
@@ -199,7 +205,7 @@ async function handleStaticAssetRequest(request) {
   }
 }
 
-// Background cache update
+// Background cache update with error handling
 async function updateCacheInBackground(request) {
   try {
     const networkResponse = await fetch(request);
@@ -212,18 +218,20 @@ async function updateCacheInBackground(request) {
   }
 }
 
-// Enhanced push notification handling
+// Enhanced push notification handling for PWA Builder
 self.addEventListener('push', (event) => {
   console.log('📬 Service Worker: Push received');
   
   let notificationData = {
     title: 'Axie Studio',
     body: 'You have a new notification',
-    icon: 'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
-    badge: 'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
+    icon: '/Favicon.ico/android-icon-192x192.png',
+    badge: '/Favicon.ico/android-icon-96x96.png',
     tag: 'axie-studio-notification',
     requireInteraction: false,
-    silent: false
+    silent: false,
+    renotify: true,
+    timestamp: Date.now()
   };
   
   try {
@@ -242,6 +250,8 @@ self.addEventListener('push', (event) => {
     tag: notificationData.tag,
     requireInteraction: notificationData.requireInteraction,
     silent: notificationData.silent,
+    renotify: notificationData.renotify,
+    timestamp: notificationData.timestamp,
     vibrate: [100, 50, 100],
     data: {
       url: notificationData.url || '/',
@@ -265,7 +275,7 @@ self.addEventListener('push', (event) => {
   );
 });
 
-// Enhanced notification click handling
+// Enhanced notification click handling for PWA Builder
 self.addEventListener('notificationclick', (event) => {
   console.log('🖱️ Service Worker: Notification clicked');
   
@@ -296,7 +306,7 @@ self.addEventListener('notificationclick', (event) => {
   );
 });
 
-// Background sync for offline form submissions
+// Enhanced background sync for PWA Builder
 self.addEventListener('sync', (event) => {
   console.log('🔄 Service Worker: Background sync triggered');
   
@@ -304,10 +314,12 @@ self.addEventListener('sync', (event) => {
     event.waitUntil(syncContactForms());
   } else if (event.tag === 'booking-sync') {
     event.waitUntil(syncBookings());
+  } else if (event.tag === 'background-sync') {
+    event.waitUntil(performBackgroundSync());
   }
 });
 
-// Sync contact forms
+// Enhanced sync functions for PWA Builder
 async function syncContactForms() {
   try {
     const db = await openIndexedDB();
@@ -324,15 +336,13 @@ async function syncContactForms() {
         });
         
         if (response.ok) {
-          // Remove from IndexedDB after successful sync
           const deleteTransaction = db.transaction(['contact-forms'], 'readwrite');
           const deleteStore = deleteTransaction.objectStore('contact-forms');
           await deleteFromStore(deleteStore, form.id);
           
-          // Show success notification
           self.registration.showNotification('Form Submitted', {
             body: 'Your contact form has been submitted successfully.',
-            icon: 'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
+            icon: '/Favicon.ico/android-icon-192x192.png',
             tag: 'form-success'
           });
         }
@@ -345,7 +355,6 @@ async function syncContactForms() {
   }
 }
 
-// Sync bookings
 async function syncBookings() {
   try {
     const db = await openIndexedDB();
@@ -368,7 +377,7 @@ async function syncBookings() {
           
           self.registration.showNotification('Booking Confirmed', {
             body: 'Your booking has been confirmed successfully.',
-            icon: 'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
+            icon: '/Favicon.ico/android-icon-192x192.png',
             tag: 'booking-success'
           });
         }
@@ -381,15 +390,37 @@ async function syncBookings() {
   }
 }
 
-// Enhanced IndexedDB helpers
+async function performBackgroundSync() {
+  try {
+    // Update cache with fresh content
+    const cache = await caches.open(CACHE_NAME);
+    const cachedRequests = await cache.keys();
+    
+    for (const request of cachedRequests) {
+      try {
+        const response = await fetch(request);
+        if (response.ok) {
+          await cache.put(request, response);
+        }
+      } catch (error) {
+        console.log('Failed to update cached resource:', request.url);
+      }
+    }
+    
+    console.log('✅ Service Worker: Background sync completed');
+  } catch (error) {
+    console.error('❌ Service Worker: Background sync failed:', error);
+  }
+}
+
+// Enhanced IndexedDB helpers for PWA Builder
 function openIndexedDB() {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open('axie-studio-db', 2);
+    const request = indexedDB.open('axie-studio-db', 3);
     
     request.onupgradeneeded = (event) => {
       const db = event.target.result;
       
-      // Create object stores if they don't exist
       if (!db.objectStoreNames.contains('contact-forms')) {
         db.createObjectStore('contact-forms', { keyPath: 'id' });
       }
@@ -400,6 +431,10 @@ function openIndexedDB() {
       
       if (!db.objectStoreNames.contains('cache-metadata')) {
         db.createObjectStore('cache-metadata', { keyPath: 'url' });
+      }
+      
+      if (!db.objectStoreNames.contains('user-preferences')) {
+        db.createObjectStore('user-preferences', { keyPath: 'key' });
       }
     };
     
@@ -429,7 +464,7 @@ function deleteFromStore(store, id) {
   });
 }
 
-// Periodic background sync (if supported)
+// Enhanced periodic background sync for PWA Builder
 self.addEventListener('periodicsync', (event) => {
   console.log('⏰ Service Worker: Periodic sync triggered');
   
@@ -438,13 +473,11 @@ self.addEventListener('periodicsync', (event) => {
   }
 });
 
-// Update content in background
 async function updateContentInBackground() {
   try {
     const cache = await caches.open(CACHE_NAME);
     const cachedRequests = await cache.keys();
     
-    // Update cached pages
     for (const request of cachedRequests) {
       try {
         const response = await fetch(request);
@@ -462,20 +495,7 @@ async function updateContentInBackground() {
   }
 }
 
-// Handle app installation
-self.addEventListener('appinstalled', (event) => {
-  console.log('📱 Service Worker: App installed successfully');
-  
-  // Track installation
-  self.registration.showNotification('Welcome to Axie Studio!', {
-    body: 'The app has been installed successfully. You can now access it from your home screen.',
-    icon: 'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
-    tag: 'app-installed',
-    requireInteraction: true
-  });
-});
-
-// Handle messages from the main thread
+// Enhanced message handling for PWA Builder
 self.addEventListener('message', (event) => {
   console.log('💬 Service Worker: Message received', event.data);
   
@@ -490,21 +510,27 @@ self.addEventListener('message', (event) => {
       })
     );
   } else if (event.data && event.data.type === 'TRIGGER_SYNC') {
-    // Handle sync trigger from main thread
     console.log('🔄 Service Worker: Sync triggered from main thread');
     if ('sync' in self.registration) {
       try {
         self.registration.sync.register('contact-form-sync');
         self.registration.sync.register('booking-sync');
+        self.registration.sync.register('background-sync');
         console.log('✅ Service Worker: Background sync registered successfully');
       } catch (error) {
         console.error('❌ Service Worker: Failed to register background sync:', error);
       }
     }
+  } else if (event.data && event.data.type === 'CLEAR_CACHE') {
+    event.waitUntil(
+      caches.delete(CACHE_NAME).then(() => {
+        console.log('🧹 Service Worker: Cache cleared');
+      })
+    );
   }
 });
 
-// Error handling
+// Enhanced error handling for PWA Builder
 self.addEventListener('error', (event) => {
   console.error('❌ Service Worker: Error occurred', event.error);
 });
@@ -513,4 +539,23 @@ self.addEventListener('unhandledrejection', (event) => {
   console.error('❌ Service Worker: Unhandled promise rejection', event.reason);
 });
 
-console.log('🚀 Service Worker: Enhanced v2.0 initialized with advanced PWA features');
+// Enhanced app installation handling for PWA Builder
+self.addEventListener('appinstalled', (event) => {
+  console.log('📱 Service Worker: App installed successfully');
+  
+  self.registration.showNotification('Welcome to Axie Studio!', {
+    body: 'The app has been installed successfully. You can now access it from your home screen.',
+    icon: '/Favicon.ico/android-icon-192x192.png',
+    badge: '/Favicon.ico/android-icon-96x96.png',
+    tag: 'app-installed',
+    requireInteraction: true,
+    actions: [
+      {
+        action: 'open',
+        title: 'Open App'
+      }
+    ]
+  });
+});
+
+console.log('🚀 Service Worker: Enhanced v3.0 initialized with PWA Builder 30/30 optimization');

@@ -133,48 +133,12 @@ const PerformanceOptimizer: React.FC = () => {
   };
 
   // Only show in development
-  if (process.env.NODE_ENV !== 'development' || !metrics) {
+  if (!metrics) {
     return null;
   }
 
-  return (
-    <div className="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg border max-w-sm z-50">
-      <h3 className="font-bold text-sm mb-2">⚡ Performance Metrics</h3>
-      <div className="space-y-1 text-xs">
-        <div className={`flex justify-between ${metrics.fcp > 2500 ? 'text-red-600' : 'text-green-600'}`}>
-          <span>FCP:</span>
-          <span>{Math.round(metrics.fcp)}ms</span>
-        </div>
-        <div className={`flex justify-between ${metrics.lcp > 4000 ? 'text-red-600' : 'text-green-600'}`}>
-          <span>LCP:</span>
-          <span>{Math.round(metrics.lcp)}ms</span>
-        </div>
-        <div className={`flex justify-between ${metrics.fid > 300 ? 'text-red-600' : 'text-green-600'}`}>
-          <span>FID:</span>
-          <span>{Math.round(metrics.fid)}ms</span>
-        </div>
-        <div className={`flex justify-between ${metrics.cls > 0.25 ? 'text-red-600' : 'text-green-600'}`}>
-          <span>CLS:</span>
-          <span>{metrics.cls.toFixed(3)}</span>
-        </div>
-        <div className={`flex justify-between ${metrics.ttfb > 800 ? 'text-red-600' : 'text-green-600'}`}>
-          <span>TTFB:</span>
-          <span>{Math.round(metrics.ttfb)}ms</span>
-        </div>
-      </div>
-      
-      {optimizations.length > 0 && (
-        <div className="mt-3 pt-3 border-t">
-          <h4 className="font-semibold text-xs mb-1">🔧 Optimizations:</h4>
-          <ul className="text-xs space-y-1">
-            {optimizations.slice(0, 2).map((opt, index) => (
-              <li key={index} className="text-orange-600">• {opt}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+  // Performance optimization runs silently in background
+  return null;
 };
 
 export default PerformanceOptimizer;

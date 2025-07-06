@@ -22,6 +22,10 @@ const Footer = () => {
                 src="/Axiestudiologo.jpg" 
                 alt="Axie Studio" 
                 className="h-12 w-auto mr-4 rounded-lg shadow-lg"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/favicon.ico';
+                }}
               />
               <div>
                 <h3 className="text-2xl font-bold gradient-text-cosmic">Axie Studio</h3>

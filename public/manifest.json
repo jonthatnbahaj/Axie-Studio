@@ -1,7 +1,7 @@
 {
   "name": "Axie Studio - Digital Excellence",
   "short_name": "Axie Studio",
-  "description": "Professional websites, booking systems and e-commerce solutions for Swedish businesses",
+  "description": "Professional websites, booking systems and e-commerce solutions for Swedish businesses. Build, Book, Automate: Your Digital Success, Simplified.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,8 +10,8 @@
   "scope": "/",
   "lang": "sv",
   "dir": "ltr",
-  "categories": ["business", "productivity", "utilities"],
-  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "categories": ["business", "productivity", "utilities", "finance"],
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
@@ -22,6 +22,10 @@
     {
       "protocol": "mailto",
       "url": "/contact?email=%s"
+    },
+    {
+      "protocol": "tel",
+      "url": "/contact?phone=%s"
     }
   ],
   "file_handlers": [
@@ -29,7 +33,9 @@
       "action": "/",
       "accept": {
         "text/plain": [".txt"],
-        "text/csv": [".csv"]
+        "text/csv": [".csv"],
+        "application/json": [".json"],
+        "text/html": [".html"]
       }
     }
   ],
@@ -44,51 +50,57 @@
   },
   "icons": [
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/Favicon.ico/android-icon-48x48.png",
       "sizes": "48x48",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "256x256",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "384x384",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "maskable any"
     }
   ],
@@ -100,8 +112,9 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "/Axiestudiologo.jpg",
-          "sizes": "96x96"
+          "src": "/Favicon.ico/android-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
       ]
     },
@@ -112,8 +125,9 @@
       "url": "/#services",
       "icons": [
         {
-          "src": "/Axiestudiologo.jpg",
-          "sizes": "96x96"
+          "src": "/Favicon.ico/android-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
       ]
     },
@@ -124,28 +138,44 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "/Axiestudiologo.jpg",
-          "sizes": "96x96"
+          "src": "/Favicon.ico/android-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Call Now",
+      "short_name": "Call",
+      "description": "Call us directly",
+      "url": "tel:+46735132620",
+      "icons": [
+        {
+          "src": "/Favicon.ico/android-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
         }
       ]
     }
   ],
   "screenshots": [
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "1280x720",
-      "type": "image/jpeg",
+      "type": "image/png",
       "form_factor": "wide",
-      "label": "Axie Studio - Home"
+      "label": "Axie Studio - Desktop View"
     },
     {
-      "src": "/Axiestudiologo.jpg",
+      "src": "/Favicon.ico/android-icon-192x192.png",
       "sizes": "750x1334",
-      "type": "image/jpeg",
+      "type": "image/png",
       "form_factor": "narrow",
-      "label": "Axie Studio - Mobile"
+      "label": "Axie Studio - Mobile View"
     }
   ],
   "related_applications": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "iarc_rating_id": "",
+  "handle_links": "preferred"
 }

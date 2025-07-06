@@ -68,6 +68,10 @@ const Header = () => {
                     src="/Axiestudiologo.jpg" 
                     alt="Axie Studio" 
                     className="relative h-10 sm:h-12 w-auto transition-all duration-300 group-hover:brightness-110"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/favicon.ico';
+                    }}
                   />
                 </div>
               </Link>
