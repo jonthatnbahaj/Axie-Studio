@@ -65,7 +65,7 @@ const Header = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
                   <img 
-                    src="https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg" 
+                    src="/Axiestudiologo.jpg" 
                     alt="Axie Studio" 
                     className="relative h-10 sm:h-12 w-auto transition-all duration-300 group-hover:brightness-110"
                   />

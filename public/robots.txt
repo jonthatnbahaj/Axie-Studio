@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /sv/
+Allow: /en/
 
 # Sitemap
 Sitemap: https://axiestudio.se/sitemap.xml
+Sitemap: https://axiestudio.se/sitemap-images.xml
+Sitemap: https://axiestudio.se/sitemap-news.xml
 
 # Crawl-delay
 Crawl-delay: 1
@@ -11,12 +15,16 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
-Disallow: /*?*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
 
 # Allow important pages
+Allow: /
+Allow: /sv/
+Allow: /en/
 Allow: /bokningssystem
 Allow: /webbplatser  
 Allow: /appar
 Allow: /e-handel
 Allow: /priser
-Allow: /kontakt

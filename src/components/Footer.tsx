@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-6">
               <img 
-                src="https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg" 
+                src="/Axiestudiologo.jpg" 
                 alt="Axie Studio" 
                 className="h-12 w-auto mr-4 rounded-lg shadow-lg"
               />

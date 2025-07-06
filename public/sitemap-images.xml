@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://axiestudio.se/</loc>
+    <image:image>
+      <image:loc>https://axiestudio.se/Axiestudiologo.jpg</image:loc>
+      <image:title>Axie Studio - Professional Digital Solutions</image:title>
+      <image:caption>Axie Studio logo representing professional web development, booking systems, and e-commerce solutions in Sweden</image:caption>
+      <image:geo_location>Jönköping, Sweden</image:geo_location>
+      <image:license>https://axiestudio.se/terms</image:license>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://axiestudio.se/sv/</loc>
+    <image:image>
+      <image:loc>https://axiestudio.se/Axiestudiologo.jpg</image:loc>
+      <image:title>Axie Studio - Professionella Digitala Lösningar</image:title>
+      <image:caption>Axie Studio logotyp som representerar professionell webbutveckling, bokningssystem och e-handelslösningar i Sverige</image:caption>
+      <image:geo_location>Jönköping, Sverige</image:geo_location>
+      <image:license>https://axiestudio.se/terms</image:license>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://axiestudio.se/en/</loc>
+    <image:image>
+      <image:loc>https://axiestudio.se/Axiestudiologo.jpg</image:loc>
+      <image:title>Axie Studio - Professional Digital Solutions</image:title>
+      <image:caption>Axie Studio logo representing professional web development, booking systems, and e-commerce solutions in Sweden</image:caption>
+      <image:geo_location>Jönköping, Sweden</image:geo_location>
+      <image:license>https://axiestudio.se/terms</image:license>
+    </image:image>
+  </url>
+  
+</urlset>

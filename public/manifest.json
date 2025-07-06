@@ -44,51 +44,51 @@
   },
   "icons": [
     {
-      "src": "/Favicon.ico/android-icon-48x48.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "48x48",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-72x72.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "72x72",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-96x96.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "96x96",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-144x144.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "144x144",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-192x192.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "maskable any"
     },
     {
-      "src": "/Favicon.ico/android-icon-192x192.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "256x256",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-192x192.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "384x384",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "/Favicon.ico/android-icon-192x192.png",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "maskable any"
     }
   ],
@@ -100,7 +100,7 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg",
+          "src": "/Axiestudiologo.jpg",
           "sizes": "96x96"
         }
       ]
@@ -112,7 +112,7 @@
       "url": "/#services",
       "icons": [
         {
-          "src": "https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg",
+          "src": "/Axiestudiologo.jpg",
           "sizes": "96x96"
         }
       ]
@@ -124,7 +124,7 @@
       "url": "/#contact",
       "icons": [
         {
-          "src": "https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg",
+          "src": "/Axiestudiologo.jpg",
           "sizes": "96x96"
         }
       ]
@@ -132,16 +132,16 @@
   ],
   "screenshots": [
     {
-      "src": "https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Axie Studio - Home"
     },
     {
-      "src": "https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg",
+      "src": "/Axiestudiologo.jpg",
       "sizes": "750x1334",
-      "type": "image/png",
+      "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Axie Studio - Mobile"
     }

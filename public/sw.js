@@ -11,7 +11,7 @@ const ASSETS_TO_CACHE = [
   '/index.html',
   '/manifest.json',
   '/offline.html',
-  'https://kt5xwoxw7ivvaxql.public.blob.vercel-storage.com/axie-studio-logo.png-KXUZ7kPWDExqtd3vBbevDyEnUzu8Il.jpeg',
+  '/Axiestudiologo.jpg',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
 ];
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import AdvancedSEO from '../components/SEO/AdvancedSEO';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import BookingSection from '../components/BookingSection';
@@ -35,6 +36,7 @@ const MainLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen" dir={currentLanguage.rtl ? 'rtl' : 'ltr'}>
+      <AdvancedSEO />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
